@@ -1,8 +1,12 @@
 package com.vishal.gamePortal.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Game {
 	
-	
+	@Id
 	private String id;
 	private String name;
 	private String publisherName;

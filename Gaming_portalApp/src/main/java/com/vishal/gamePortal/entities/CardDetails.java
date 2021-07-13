@@ -1,7 +1,12 @@
 package com.vishal.gamePortal.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class CardDetails {
 
+	@Id
 	private long id;
 	private String cardNumber;
 	private String CVV;

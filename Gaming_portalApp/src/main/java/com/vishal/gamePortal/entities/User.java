@@ -15,6 +15,7 @@ public class User {
 	private String confirmPassword;
 	private String age;
 	private String gender;
+	private String role="USER";
 	
 	public User()
 	{
@@ -81,6 +82,14 @@ public class User {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email

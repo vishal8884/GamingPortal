@@ -14,6 +14,5 @@ public class HomeController {
 		return "home";    //no need of home.html
 	}
 	
-	
 
 }

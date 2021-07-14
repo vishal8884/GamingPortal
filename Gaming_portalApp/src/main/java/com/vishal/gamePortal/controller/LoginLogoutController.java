@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginLogoutController {
 
 	
+	
+	
 	@RequestMapping("/user/login")
 	public String userLogin()
 	{
 		return "loginPages/loginUser";
 	}
 	
-	
 	@RequestMapping("/user/dashboard")
-	public String userDashboard()
+	public String userLoginSuccess()
 	{
-		return "home";
+		return "loginPages/loginSuccess";
 	}
+	
 	
 }

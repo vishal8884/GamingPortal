@@ -10,7 +10,7 @@
     <div class="main">
     <form th:action="@{/user/login}" method="post">
     <p>
-        User name: <input type="text" name="username" required /> 
+        Email: <input type="text" name="username" required />  <!-- Imp notes :: you need to have name=username only here for spring security login -->
     </p>
     <p>
         Password: <input type="password" name="password" required />

@@ -29,16 +29,51 @@
         Email: <input type="email" name="email" required />  <!-- Imp notes :: you need to have name=username only here for spring security login -->
     </p>
     <p>
-        Password: <input type="password" name="password" required />  <!-- Imp notes :: you need to have name=username only here for spring security login -->
+        Password: <input type="password" name="password" id="password" required />  <!-- Imp notes :: you need to have name=username only here for spring security login -->
+        
     </p>
     <p>
-        Confirm password: <input type="password" name="confirmPassword" required />  <!-- Imp notes :: you need to have name=username only here for spring security login -->
+        Confirm password: <input type="password" name="confirmPassword" id="confirmPassword" onkeyup="check(this)" required />  <!-- Imp notes :: you need to have name=username only here for spring security login -->
+        <p> id="alert"></p>
     </p>
     <p>
-        <input type="submit" value="Register" />
+        <input type="submit" value="Register"/>
         </p>
+        
+        
+
 
 </div>
 </form>
+
+<span th:text="${savesuccess}"></span>
+
+<span th:text="${error}"></span>
     </body>
+    
+    
+    <script>
+    
+    var password = document.getElementById('password');
+    
+    function check(elem)
+    {
+    	if(elem.value.length>0)
+    		{
+    		   if(elem.value!=password.value)
+    			   {
+    		   document.getElementById('alert').innerText = "Confirm password does not match";
+    			   }
+    		   else
+       		      {
+       		    document.getElementById('alert').innerText = "";
+       		      }
+    		}
+    	else
+    		{
+    		 document.getElementById('alert').innerText = "Please enter confirm password";
+    		}
+    }
+    
+    </script>
 </html>

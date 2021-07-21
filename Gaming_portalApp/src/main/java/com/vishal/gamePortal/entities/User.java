@@ -12,7 +12,6 @@ public class User {
 	private String lastName;
 	private String email;
 	private String password;
-	private String confirmPassword;
 	private String age;
 	private String gender;
 	private String role="USER";
@@ -22,7 +21,7 @@ public class User {
 		
 	}
 	
-	public User(long id, String firstName, String lastName, String email, String password, String confirmPassword,
+	public User(long id, String firstName, String lastName, String email, String password,
 			String age, String gender) {
 		super();
 		this.id = id;
@@ -30,7 +29,6 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
-		this.confirmPassword = confirmPassword;
 		this.age = age;
 		this.gender = gender;
 	}
@@ -64,12 +62,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
 	public String getAge() {
 		return age;
 	}
@@ -93,7 +85,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", password=" + password + ", confirmPassword=" + confirmPassword + ", age=" + age + ", gender="
+				+ ", password=" + password + ", age=" + age + ", gender="
 				+ gender + "]";
 	}
 	

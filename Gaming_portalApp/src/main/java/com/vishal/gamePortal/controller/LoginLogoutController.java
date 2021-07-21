@@ -17,6 +17,8 @@ public class LoginLogoutController {
 	@Autowired
 	private UserRepository userRepo;
 	
+	private long id=10000;
+	
 	@RequestMapping("/registerNewUser")
 	public String registerNewUser()
 	{
@@ -26,12 +28,26 @@ public class LoginLogoutController {
 	@RequestMapping("/reguserpost")
 	public String reguserpost(@ModelAttribute("user") User user,ModelMap modelMap)
 	{
-		long userId = new Random().nextLong();
+		id++;
+		long userId = id;
 		user.setId(userId);
 		
+		try
+		{
 		User savedUser = userRepo.save(user);
 		modelMap.addAttribute("savedUser", savedUser);
-		return "loginPages/loginUser";
+		modelMap.addAttribute("savesuccess", "Vendor is saved successfully");
+		}
+		catch (Exception e) {
+			modelMap.addAttribute("error", "error while saving dublicate value entered");
+		}
+
+		
+		
+		
+		
+		return "loginPages/RegisterNewUserPage";
+
 	}
 	
 	@RequestMapping("/user/login")
